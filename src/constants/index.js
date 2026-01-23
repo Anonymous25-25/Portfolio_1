@@ -96,40 +96,43 @@ const slides = [
   },
   {
     id: 1,
-    title: "LifeSync",
-    img: "/images/LifeSync1.png",
-    link: "https://lifesync21.netlify.app/",
-  },
-  {
-    id: 2,
-    title: "Spotify-Frontend",
-    img: "/images/Spotify-Frontend.png",
-    link: "https://spotifyclone-react.netlify.app/",
-  },
-  {
-    id: 3,
     title: "Paon Flowers",
     img: "/images/paonflowers.png",
     link: "https://paonflowers.co.uk/",
   },
   {
+    id: 2,
+    title: "LifeSync",
+    img: "/images/LifeSync1.png",
+    link: "https://lifesync21.netlify.app/",
+  },
+  
+  
+  {
+    id: 3,
+    title: "Spotify-Frontend",
+    img: "/images/Spotify-Frontend.png",
+    link: "https://spotifyclone-react.netlify.app/",
+  },
+  {
     id: 4,
+    title: "Calculator",
+    img: "/images/Calculator.png",
+    link: "https://advance-calculator-1.netlify.app/",
+  },
+  {
+    id: 5,
     title: "Hawk Style Design",
     img: "/images/p5.png",
     link: "https://example.com/project-five",
   },
   {
-    id: 5,
+    id: 6,
     title: "Lewis",
     img: "/images/p6.png",
     link: "https://example.com/project-six",
   },
-  {
-    id: 6,
-    title: "Calculator",
-    img: "/images/Calculator.png",
-    link: "https://advance-calculator-1.netlify.app/",
-  },
+  
 ];
 
 const testimonials = [
