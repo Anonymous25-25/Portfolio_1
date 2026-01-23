@@ -108,9 +108,9 @@ const slides = [
   },
   {
     id: 3,
-    title: "Blimp.gr",
-    img: "/images/p4.png",
-    link: "https://example.com/project-four",
+    title: "Paon Flowers",
+    img: "/images/paonflowers.png",
+    link: "https://paonflowers.co.uk/",
   },
   {
     id: 4,
