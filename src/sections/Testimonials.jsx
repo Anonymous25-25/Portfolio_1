@@ -1,7 +1,7 @@
 import GradientSpheres from "../components/GradientSpheres";
-// import TestimonialCard from "../components/TestimonialCard";
+import TestimonialCard from "../components/TestimonialCard";
 import TitleHeader from "../components/TitleHeader";
-// import { testimonials } from "../constants";
+import { testimonials } from "../constants";
 
 const Testimonials = () => {
   return (
@@ -15,7 +15,7 @@ const Testimonials = () => {
         <TitleHeader
           title="TESTIMONIALS"
           number="03"
-          text="Watch what our clients are saying about us"
+          text="Watch what my clients are saying about me"
         />
 
         {/* Placeholder Message */}
@@ -33,7 +33,7 @@ const Testimonials = () => {
         </div>
 
         {/* Future Testimonials */}
-        {/* 
+        {/* {
         <div className="mt-20">
           <div className="grid md:grid-cols-2 gap-5">
             {testimonials.map((testimonial, index) => (
@@ -41,7 +41,7 @@ const Testimonials = () => {
             ))}
           </div>
         </div> 
-        */}
+        } */}
       </div>
     </section>
   );
