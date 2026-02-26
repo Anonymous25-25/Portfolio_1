@@ -8,8 +8,16 @@ const navItems = [
     href: "#about",
   },
   {
+    name: "Services",
+    href: "#services",
+  },
+  {
     name: "Projects",
     href: "#projects",
+  },
+  {
+    name: "How I Work",
+    href: "#how-i-work",
   },
   {
     name: "Testimonials",
@@ -89,12 +97,6 @@ const iconsList = [
 
 const slides = [
   {
-    id: 7,
-    title: "Calculator",
-    img: "/images/Calculator.png",
-    link: "https://advance-calculator-1.netlify.app/",
-  },
-  {
     id: 1,
     title: "Paon Flowers",
     img: "/images/paonflowers.png",
@@ -106,6 +108,14 @@ const slides = [
     img: "/images/LifeSync1.png",
     link: "https://lifesync21.netlify.app/",
   },
+  {
+    id: 3,
+    title: "Calculator",
+    img: "/images/Calculator.png",
+    link: "https://advance-calculator-1.netlify.app/",
+  },
+  
+  
   
   
   {
@@ -189,7 +199,7 @@ const footerIconsList = [
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/qr/6YZDN7HTKGPWI1",
+    href: "https://wa.me/918384818914?text=Hi%20Saurav,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.%20Here%20are%20some%20brief%20details:",
     icon: "/images/whatsapp.svg",
   },
 ];

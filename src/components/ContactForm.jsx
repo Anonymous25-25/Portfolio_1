@@ -1,77 +1,65 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import React, { useEffect } from "react";
+import gsap from "gsap";
 
 const ContactForm = () => {
-  const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data) => {
-    emailjs
-      .send(
-        "service_ml92j69", // e.g. service_abc123
-        "template_itt1cub", // e.g. template_xyz456
-        data,
-        "vCUEcvdE3Dd69H0CG" // e.g. _abcdEfGhIjk
-      )
-      .then(
-        (result) => {
-          console.log("Email sent:", result.text);
-          reset();
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.error("Error sending email:", error.text);
-          alert("Something went wrong.");
-        }
-      );
-  };
+  useEffect(() => {
+    const btn = document.querySelector(".magnetic-btn");
+    if (!btn) return;
+
+    btn.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      gsap.to(btn, {
+        x: x * 0.2,
+        y: y * 0.2,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.3)",
+      });
+    });
+  }, []);
 
   return (
-    <div className="flex-center w-full py-10">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-2xl  rounded-2xl p-8 flex flex-col gap-5"
+    <form className="space-y-6">
+
+      <input
+        type="text"
+        placeholder="Your Name"
+        className="w-full p-4 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 transition-all duration-300 outline-none"
+      />
+
+      <input
+        type="email"
+        placeholder="Your Email"
+        className="w-full p-4 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 transition-all duration-300 outline-none"
+      />
+
+      <textarea
+        rows="5"
+        placeholder="Your Message"
+        className="w-full p-4 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 transition-all duration-300 outline-none"
+      ></textarea>
+
+      <button
+        type="submit"
+        className="magnetic-btn relative overflow-hidden px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,255,0.6)]"
       >
-        <h2 className="text-white text-2xl font-bold">Contact Me</h2>
+        <span className="relative z-10">Send Message</span>
+        <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition duration-300"></span>
+      </button>
 
-        <div className="flex flex-col">
-          <label className="text-white mb-1">Name</label>
-          <input
-            type="text"
-            {...register("name", { required: true })}
-            className="px-4 py-2 rounded-md bg-black-100 text-white outline-none border border-gray-600"
-            placeholder="Your Name"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-white mb-1">Email</label>
-          <input
-            type="email"
-            {...register("email", { required: true })}
-            className="px-4 py-2 rounded-md bg-black-100 text-white outline-none border border-gray-600"
-            placeholder="you@example.com"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-white mb-1">Message</label>
-          <textarea
-            {...register("message", { required: true })}
-            rows="4"
-            className="px-4 py-2 rounded-md bg-black-100 text-white outline-none border border-gray-600"
-            placeholder="Your message..."
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-md mt-4 transition-all"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
+    </form>
   );
 };
 

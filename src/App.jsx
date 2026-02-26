@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
+import Services from "./sections/Services";
+import HowIWork from "./sections/HowIWork";
+import Experience from "./sections/Experience";
 import TechStack from "./sections/TechStack";
 import Projects from "./sections/Projects";
 import Testimonials from "./sections/Testimonials";
@@ -9,6 +12,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
 import Loader from "./components/Loader";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,12 +31,16 @@ function App() {
         <Loader />
       ) : (
         <>
+        <FloatingWhatsApp />
           <NavBar />
           <SideBar />
           <Hero />
           <About />
-          <TechStack />
+          <Services />
           <Projects />
+          <HowIWork />
+          {/* <Experience /> */}
+          <TechStack /> 
           <Testimonials />
           <Contact />
           <Footer />

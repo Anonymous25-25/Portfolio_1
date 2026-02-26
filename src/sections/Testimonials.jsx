@@ -1,47 +1,59 @@
 import GradientSpheres from "../components/GradientSpheres";
-import TestimonialCard from "../components/TestimonialCard";
 import TitleHeader from "../components/TitleHeader";
-import { testimonials } from "../constants";
 
 const Testimonials = () => {
+  // 🔹 Replace this content later with real testimonial
+  const testimonial = {
+    feedback:
+      "Client feedback will be added here shortly. Currently finalizing testimonial approval from live project collaboration.",
+    name: "Founder",
+    company: "Paon Flowers",
+    location: "Dubai, UAE",
+  };
+
   return (
-    <section id="testimonials" className="flex-center relative md:p-0 px-5">
+    <section
+      id="testimonials"
+      className="relative py-0 px-5"
+    >
       <GradientSpheres
         sphere1Class="testimonial-gradient-sphere testimonial-sphere-1"
         sphere2Class="testimonial-gradient-sphere testimonial-sphere-2"
       />
 
-      <div className="w-full h-full container relative z-10 md:my-40 my-20">
+      <div className="container mx-auto relative z-10">
         <TitleHeader
-          title="TESTIMONIALS"
-          number="03"
-          text="Watch what my clients are saying about me"
+          title="Client Feedback"
+          number="07"
+          text="Trusted collaboration and real-world delivery."
         />
 
-        {/* Placeholder Message */}
-        <div className="mt-16 flex justify-center items-center px-4">
-          <div className="gradient-border p-6 sm:p-8 rounded-2xl text-center max-w-xl w-full">
-            <p className="text-white text-base sm:text-lg font-medium italic leading-relaxed">
-              I’m currently building my client base.{" "}
-              <br className="hidden sm:block" />
-              <span className="text-pink-500">
-                Be the first to work with me and get featured here with your
-                honest feedback! 🚀
-              </span>
+        <div className="mt-20 flex justify-center">
+          <div className="max-w-3xl w-full bg-black-300 border border-white/10 rounded-3xl p-10 backdrop-blur-md shadow-lg hover:shadow-xl transition duration-300">
+
+            {/* Quote */}
+            <p className="text-gray-300 text-lg leading-relaxed italic">
+              “{testimonial.feedback}”
             </p>
+
+            {/* Divider */}
+            <div className="mt-8 h-px bg-white/10 w-full"></div>
+
+            {/* Client Info */}
+            <div className="mt-6">
+              <h4 className="text-white font-semibold">
+                {testimonial.name}
+              </h4>
+              <p className="text-blue-400 text-sm">
+                {testimonial.company}
+              </p>
+              <p className="text-gray-400 text-sm">
+                {testimonial.location}
+              </p>
+            </div>
+
           </div>
         </div>
-
-        {/* Future Testimonials */}
-        {/* {
-        <div className="mt-20">
-          <div className="grid md:grid-cols-2 gap-5">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} />
-            ))}
-          </div>
-        </div> 
-        } */}
       </div>
     </section>
   );

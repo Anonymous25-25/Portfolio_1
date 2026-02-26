@@ -1,92 +1,169 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { slides } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+const AUTO_PLAY_DELAY = 2000;
+
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const trackRef = useRef(null);
+  const containerRef = useRef(null);
+  const autoPlayRef = useRef(null);
+  const startX = useRef(0);
+  const isDragging = useRef(false);
 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % (slides.length - 1));
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + (slides.length - 1)) % (slides.length - 1)
+      (prev) => (prev - 1 + slides.length) % slides.length
     );
   };
 
+  // 🎬 Cinematic GSAP Animation
   useGSAP(() => {
-    const tl = gsap.timeline();
+    if (!trackRef.current) return;
 
-    tl.to(".slider-item", {
-      x: `-${currentSlide * 63}vw`,
-      duration: 1,
-      ease: "power2.inOut",
+    gsap.to(trackRef.current, {
+      xPercent: -currentSlide * 100,
+      duration: 1.2,
+      ease: "power4.inOut", // Apple-style smooth curve
     });
+
+    gsap.fromTo(
+      ".slide-image",
+      { scale: 1.1 },
+      {
+        scale: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      }
+    );
   }, [currentSlide]);
 
+  // ▶️ Auto Play
+  useEffect(() => {
+    autoPlayRef.current = setInterval(() => {
+      nextSlide();
+    }, AUTO_PLAY_DELAY);
+
+    return () => clearInterval(autoPlayRef.current);
+  }, []);
+
+  // ⏸ Pause on hover
+  const handleMouseEnter = () => {
+    clearInterval(autoPlayRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    autoPlayRef.current = setInterval(nextSlide, AUTO_PLAY_DELAY);
+  };
+
+  // 🖐 Drag / Swipe
+  const handleDragStart = (e) => {
+    isDragging.current = true;
+    startX.current = e.type.includes("mouse")
+      ? e.clientX
+      : e.touches[0].clientX;
+  };
+
+  const handleDragEnd = (e) => {
+    if (!isDragging.current) return;
+
+    const endX = e.type.includes("mouse")
+      ? e.clientX
+      : e.changedTouches[0].clientX;
+
+    const diff = startX.current - endX;
+
+    if (diff > 50) nextSlide();
+    if (diff < -50) prevSlide();
+
+    isDragging.current = false;
+  };
+
   return (
-    <div className="relative">
-      <div className="w-full relative lg:h-[60vh] md:h-[40vh] h-[60vh]">
-        <div className="carousel-gradient-left-box md:w-52 w-16 h-full absolute bottom-0 left-0 z-20"></div>
-        <div className="carousel-gradient-right-box md:w-52 w-16 h-full absolute bottom-0 right-0 z-20"></div>
-        <div className="absolute w-full -left-[43vw] top-0">
-          <div className="flex w-full lg:h-[60vh] md:h-[40vh] h-[60vh] items-center gap-[3vw]">
-            {slides.map((slide, index) => (
-              <a
-                href={slide.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="slider-item w-[60vw] h-full flex-none relative"
-                key={index}
-              >
-                <img
-                  src={slide.img}
-                  alt={slide.title}
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute w-full h-20 bottom-0 left-0 bg-black-300 bg-opacity-90 px-5">
-                  <div className="w-full h-full flex justify-between items-center">
-                    <div className="flex-center gap-2">
-                      <p className="md:text-2xl text-white-50 opacity-80">
-                        {index + 1}.
-                      </p>
-                      <p className="md:text-2xl text-white-50 opacity-80">
-                        {slide.title}
-                      </p>
-                    </div>
-                    <div className="flex-center gap-5">
-                      <p className="text-2xl hidden md:block text-white-50 opacity-80">
-                        Preview Project
-                      </p>
-                      <img
-                        src="/images/arrowupright.svg"
-                        alt="arrow"
-                        className="md:size-10 size-7"
-                      />
-                    </div>
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-6xl mx-auto"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Slider Container */}
+      <div
+        className="overflow-hidden rounded-2xl cursor-grab active:cursor-grabbing"
+        onMouseDown={handleDragStart}
+        onMouseUp={handleDragEnd}
+        onTouchStart={handleDragStart}
+        onTouchEnd={handleDragEnd}
+      >
+        {/* Slider Track */}
+        <div ref={trackRef} className="flex">
+          {slides.map((slide, index) => (
+            <a
+              key={index}
+              href={slide.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex-shrink-0 relative group"
+            >
+              {/* Image */}
+              <img
+                src={slide.img}
+                alt={slide.title}
+                className="slide-image w-full h-[60vh] object-cover transition duration-700"
+              />
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+              {/* Info Bar */}
+              <div className="absolute bottom-0 left-0 w-full px-6 py-5 backdrop-blur-md bg-black/60 border-t border-white/10">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-sm opacity-60">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="text-2xl font-semibold">
+                      {slide.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="hidden md:block text-cyan-400">
+                      Preview
+                    </span>
+                    <img
+                      src="/images/arrowupright.svg"
+                      alt="arrow"
+                      className="w-6 h-6 group-hover:translate-x-1 transition"
+                    />
                   </div>
                 </div>
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
 
-      <div className="mt-10 text-white-50 flex justify-end gap-5 md:-translate-x-32 -translate-x-5">
-        <div
+      {/* Controls */}
+      <div className="flex justify-end gap-4 mt-8">
+        <button
           onClick={prevSlide}
-          className="rounded-full cursor-pointer bg-blue-50 hover:bg-pink-100 active:scale-90 transition-all w-12 h-12 flex-center"
+          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition active:scale-90"
         >
-          <img src="/images/CaretLeft.svg" alt="left" className="w-5 h-5" />
-        </div>
-        <div
+          ←
+        </button>
+
+        <button
           onClick={nextSlide}
-          className="rounded-full cursor-pointer bg-blue-50 hover:bg-pink-100 active:scale-90 transition-all w-12 h-12 flex-center"
+          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition active:scale-90"
         >
-          <img src="/images/CaretRight.svg" alt="right" className="w-5 h-5" />
-        </div>
+          →
+        </button>
       </div>
     </div>
   );

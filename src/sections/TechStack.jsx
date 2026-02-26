@@ -1,35 +1,66 @@
-import TechIcon from "../components/TechIcon";
 import TitleHeader from "../components/TitleHeader";
-import { iconsList } from "../constants";
-
+import GradientSpheres from "../components/GradientSpheres";
 
 const TechStack = () => {
+  const stacks = [
+    {
+      category: "Frontend Engineering",
+      items: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "Responsive UI", "Performance Optimization"],
+    },
+    {
+      category: "Backend Architecture",
+      items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication & Authorization"],
+    },
+    {
+      category: "Deployment & Tools",
+      items: ["Git & GitHub", "Vercel", "Netlify", "Environment Configuration", "Production Deployment"],
+    },
+  ];
+
   return (
-    <div className="w-full h-full">
-      <div className="w-full md:my-40 my-20">
-        <div className="container mx-auto md:p-0 px-5">
-          <TitleHeader
-            title="TECH STACK"
-            number="02"
-            text="My Go-To Tools for Crafting Solutions"
-          />
-        </div>
-        <div className="md:mt-20 mt-10 relative">
-          <div className="tech-stack-gradient-left-box w-36 h-full absolute bottom-0 left-0 z-20"></div>
-          <div className="tech-stack-gradient-right-box w-36 h-full absolute bottom-0 right-0 z-20"></div>
-          <div className="marquee h-52">
-            <div className="marquee-box md:gap-12 gap-5">
-              {iconsList.map((icon, index) => (
-                <TechIcon key={index} icon={icon} />
-              ))}
-              {iconsList.map((icon, index) => (
-                <TechIcon key={index} icon={icon} />
-              ))}
+    <section id="tech-stack" className="relative py-24 px-5">
+      <GradientSpheres
+        sphere1Class="projects-gradient-sphere projects-sphere-1"
+        sphere2Class="projects-gradient-sphere projects-sphere-2"
+      />
+
+      <div className="container mx-auto relative z-10">
+        <TitleHeader
+          title="Core Technologies"
+          number="06"
+          text="Modern full-stack technologies used to build scalable and production-ready applications."
+        />
+
+        <div className="mt-20 grid md:grid-cols-3 gap-10">
+          {stacks.map((stack, index) => (
+            <div
+              key={index}
+              className="bg-black-300 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition duration-300"
+            >
+              <h3 className="text-xl font-semibold mb-6 text-blue-400">
+                {stack.category}
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                {stack.items.map((item, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-sm rounded-full bg-white/5 border border-white/10 text-gray-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Subtle Closing Statement */}
+        <div className="mt-20 text-center text-gray-400 text-sm leading-relaxed">
+          Focused on clean architecture, scalable systems, and long-term maintainability.
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
