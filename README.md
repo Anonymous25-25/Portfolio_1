@@ -61,8 +61,7 @@ src/
 📬 Contact
 If you’d like to collaborate or have feedback, feel free to connect!
 
-Email: singhsaurav170170@gmail.com
+Email: black1black234b@gmail.com
 
-Portfolio: saurav-portfolio-updated.netlify.app
 
-LinkedIn: lhttps://www.linkedin.com/in/saurav6568/
+LinkedIn:  https://www.linkedin.com/in/youness-boussedari-34a93136b
