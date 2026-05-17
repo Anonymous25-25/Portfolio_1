@@ -1,3 +1,45 @@
+const myProjects = [
+  {
+    id: 1,
+    title: "AI Cyber_Guard",
+    subtitle: "Automated Vulnerability Detection • SVM + n8n",
+    description:
+      "An automated web application vulnerability scanning system. It uses an AI model (SVM) to detect threats like SQLi and XSS from input payloads, with real-time alerting via n8n to Telegram.",
+    image: "/projects/cyberguard.png",
+    tech: ["Python", "SVM", "Machine Learning", "n8n", "Telegram API"],
+    github: "https://github.com/Anonymous25-25",
+    report: "https://github.com/Anonymous25-25",
+    featured: true,
+    accentColor: "cyan",
+  },
+  {
+    id: 2,
+    title: "AI Assistance_Jarvis",
+    subtitle: "Multi-Model Intelligence Orchestrator • Security Workflows",
+    description:
+      "A sophisticated multi-model intelligence orchestrator designed for security workflows. It features real-time decision routing between local and cloud LLMs with a high-tech monitoring dashboard.",
+    image: "/projects/jarvis.png",
+    tech: ["Next.js", "FastAPI", "Multi-Model Routing", "Security Dashboards"],
+    github: "https://github.com/Anonymous25-25",
+    report: "https://github.com/Anonymous25-25",
+    featured: false,
+    accentColor: "purple",
+  },
+  {
+    id: 3,
+    title: "Multi-Model AI Routing",
+    subtitle: "Neural Network Architecture • STT / TTS / RAG",
+    description:
+      "A complex neural network architecture for AI processing. It handles STT, Vision, TTS, and RAG with optimized latency routing across local and cloud inference endpoints.",
+    image: "/projects/multiai.png",
+    tech: ["Ollama", "RAG", "STT/TTS", "Vector Databases"],
+    github: "https://github.com/Anonymous25-25",
+    report: "https://github.com/Anonymous25-25",
+    featured: false,
+    accentColor: "cyan",
+  },
+];
+
 const navItems = [
   {
     name: "Home",
@@ -32,174 +74,119 @@ const navItems = [
 const bentoSocialLinks = [
   {
     name: "Github",
-    href: "https://github.com/sauravsingh6568",
+    href: "https://github.com/Anonymous25-25",
     icon: "/images/github.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/sauravsingh6568/",
+    href: "https://www.instagram.com/anony_mous_25_25",
     icon: "/images/insta.svg",
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/saurav6568/",
+    href: "https://www.linkedin.com/in/youness-boussedari-34a93136b",
     icon: "/images/linkedin.svg",
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/qr/6YZDN7HTKGPWI1",
+    href: "https://wa.me/212632260694",
     icon: "/images/whatsapp.svg",
   },
 ];
 
 const iconsList = [
   {
-    name: "html",
-    image: "/images/html.svg",
+    name: "nmap",
+    image: "/images/nmap.svg",
   },
   {
-    name: "css",
-    image: "/images/css.svg",
+    name: "burpsuite",
+    image: "/images/burpsuite.svg",
   },
   {
-    name: "javascript",
-    image: "/images/js.svg",
+    name: "metasploit",
+    image: "/images/metasploit.svg",
   },
   {
-    name: "react",
-    image: "/images/react.svg",
+    name: "python",
+    image: "/images/python.svg",
   },
   {
-    name: "typescript",
-    image: "/images/ts.svg",
+    name: "linux",
+    image: "/images/linux.svg",
   },
   {
-    name: "github",
-    image: "/images/github.svg",
+    name: "splunk",
+    image: "/images/splunk.svg",
   },
   {
-    name: "gsap",
-    image: "/images/gsap.svg",
+    name: "wireshark",
+    image: "/images/wireshark.svg",
   },
   {
-    name: "threejs",
-    image: "/images/threejs.svg",
+    name: "nextjs",
+    image: "/images/nextjs.svg",
   },
   {
-    name: "figma",
-    image: "/images/figma.svg",
+    name: "docker",
+    image: "/images/docker.svg",
   },
   {
-    name: "aws",
-    image: "/images/aws.svg",
+    name: "owasp",
+    image: "/images/owasp.svg",
   },
 ];
 
 const slides = [
   {
     id: 1,
-    title: "Paon Flowers",
-    img: "/images/paonflowers.png",
-    link: "https://paonflowers.co.uk/",
+    title: "Offensive Security Assessment",
+    img: "/images/offensive-security.png",
+    link: "https://github.com/Anonymous25-25",
   },
   {
     id: 2,
-    title: "LifeSync",
-    img: "/images/LifeSync1.png",
-    link: "https://lifesync21.netlify.app/",
+    title: "JARVIS AI Co-Pilot",
+    img: "/images/jarvis.png",
+    link: "https://github.com/Anonymous25-25",
   },
   {
     id: 3,
-    title: "Calculator",
-    img: "/images/Calculator.png",
-    link: "https://advance-calculator-1.netlify.app/",
+    title: "SOC Blue Team Monitoring",
+    img: "/images/soc-monitoring.png",
+    link: "https://github.com/Anonymous25-25",
   },
-  
-  
-  
-  
-  {
-    id: 3,
-    title: "Spotify-Frontend",
-    img: "/images/Spotify-Frontend.png",
-    link: "https://spotifyclone-react.netlify.app/",
-  },
-  {
-    id: 4,
-    title: "Calculator",
-    img: "/images/Calculator.png",
-    link: "https://advance-calculator-1.netlify.app/",
-  },
-  {
-    id: 5,
-    title: "Hawk Style Design",
-    img: "/images/p5.png",
-    link: "https://example.com/project-five",
-  },
-  {
-    id: 6,
-    title: "Lewis",
-    img: "/images/p6.png",
-    link: "https://example.com/project-six",
-  },
-  
 ];
 
 const testimonials = [
-  // {
-  //   name: "John Miller",
-  //   pos: "Founder of ModernEdge Solutions",
-  //   review:
-  //     "David Jhon turned our vision into a stunning, functional platform that our customers love. Their creativity and technical expertise truly set them apart.",
-  //   imgPath: "/images/client1.png",
-  // },
   {
-    name: "Puja Regmi Bhandari",
-    pos: "Founder and CEO of Paown Flowers Dubai",
+    name: "Client",
+    pos: "Security Engagement",
     review:
-      "David Jhon consistently brings fresh ideas and innovative solutions. Their passion for creativity and attention to detail elevate every project.",
+      "Professional penetration testing engagement with clear, actionable reporting. Identified critical vulnerabilities and provided remediation guidance.",
     imgPath: "/images/client2.png",
-     instapaonflowers: "https://www.instagram.com/paonflowers/",
-    imgPath2: "/images/b-insta.svg",
-
-   
-    
   },
-  // {
-  //   name: "Sarah Lopez",
-  //   pos: "Entrepreneur and Small Business Owner",
-  //   review:
-  //     "Exceeded my expectations with a unique and beautifully designed product that works flawlessly. Their creative touch is outstanding.",
-  //   imgPath: "/images/client3.png",
-  // },
-  // {
-  //   name: "David Chen",
-  //   pos: "Project Manager at CreativeSphere Agency",
-  //   review:
-  //     "Blends technical skills with bold creativity to deliver exceptional results. They push boundaries and elevate every project they work on.",
-  //   imgPath: "/images/client4.png",
-  // },
 ];
 
 const footerIconsList = [
   {
     name: "Github",
-    href: "https://github.com/sauravsingh6568",
+    href: "https://github.com/Anonymous25-25",
     icon: "/images/github.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/sauravsingh6568/",
+    href: "https://www.instagram.com/anony_mous_25_25",
     icon: "/images/insta.svg",
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/saurav6568/",
+    href: "https://www.linkedin.com/in/youness-boussedari-34a93136b",
     icon: "/images/linkedin.svg",
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/918384818914?text=Hi%20Saurav,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.%20Here%20are%20some%20brief%20details:",
+    href: "https://wa.me/212632260694?text=Hi%20Youness,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20security%20engagement.",
     icon: "/images/whatsapp.svg",
   },
 ];
@@ -211,4 +198,5 @@ export {
   slides,
   testimonials,
   footerIconsList,
+  myProjects,
 };

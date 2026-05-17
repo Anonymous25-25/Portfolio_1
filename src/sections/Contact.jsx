@@ -17,9 +17,9 @@ const Contact = () => {
       <div className="container mx-auto relative z-20">
 
         <TitleHeader
-          title="Start Your Project"
+          title="Start Your Engagement"
           number="08"
-          text="Let’s discuss your goals and build a scalable, production-ready solution tailored to your business."
+          text="Let&apos;s discuss your security needs and plan a thorough, professional assessment."
         />
 
         {/* Main Container */}
@@ -42,15 +42,15 @@ const Contact = () => {
 
                 <ul className="space-y-3 text-gray-300 text-sm md:text-base leading-relaxed">
                   <li>• Clear communication & structured milestones</li>
-                  <li>• Scalable full-stack architecture</li>
-                  <li>• Production-ready deployment</li>
-                  <li>• Long-term maintainability</li>
+                  <li>• Thorough vulnerability assessment</li>
+                  <li>• Executive-ready reporting</li>
+                  <li>• Confidentiality & professionalism</li>
                 </ul>
               </div>
 
               <div className="border-t border-white/10 pt-6 space-y-3 text-gray-400 text-sm md:text-base">
-                <p><strong>Availability:</strong> Open to quality freelance projects</p>
-                <p><strong>Timezone:</strong> IST (Flexible overlap for global clients)</p>
+                <p><strong>Availability:</strong> Open to security engagements & freelance projects</p>
+                <p><strong>Location:</strong> Sidi Kacem, Morocco (GMT+1)</p>
                 <p><strong>Response Time:</strong> Within 24 hours</p>
               </div>
 
@@ -59,10 +59,10 @@ const Contact = () => {
                   Prefer direct communication?
                 </p>
                 <a
-                  href="mailto:singhsaurav170@gmail.com"
+                  href="mailto:black1black234b@gmail.com"
                   className="text-blue-500 hover:text-blue-400 transition font-medium text-sm md:text-base break-all"
                 >
-                  singhsaurav170@gmail.com →
+                  black1black234b@gmail.com →
                 </a>
               </div>
 

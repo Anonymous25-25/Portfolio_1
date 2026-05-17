@@ -4,16 +4,16 @@ import GradientSpheres from "../components/GradientSpheres";
 const TechStack = () => {
   const stacks = [
     {
-      category: "Frontend Engineering",
-      items: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "Responsive UI", "Performance Optimization"],
+      category: "Offensive Security",
+      items: ["Penetration Testing", "Nmap", "Burp Suite", "OWASP ZAP", "Metasploit", "Wireshark"],
     },
     {
-      category: "Backend Architecture",
-      items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication & Authorization"],
+      category: "Defensive & SOC",
+      items: ["SOC Analysis", "Splunk", "Wazuh SIEM", "Threat Detection", "MITRE ATT&CK", "SIEM Analysis"],
     },
     {
-      category: "Deployment & Tools",
-      items: ["Git & GitHub", "Vercel", "Netlify", "Environment Configuration", "Production Deployment"],
+      category: "Development & AI",
+      items: ["Python", "FastAPI", "Next.js", "Docker", "LLM Integration", "Linux/Kali"],
     },
   ];
 
@@ -26,9 +26,9 @@ const TechStack = () => {
 
       <div className="container mx-auto relative z-10">
         <TitleHeader
-          title="Core Technologies"
+          title="Technical Arsenal"
           number="06"
-          text="Modern full-stack technologies used to build scalable and production-ready applications."
+          text="Core tools, platforms, and frameworks used across offensive, defensive, and development workflows."
         />
 
         <div className="mt-20 grid md:grid-cols-3 gap-10">
@@ -57,7 +57,7 @@ const TechStack = () => {
 
         {/* Subtle Closing Statement */}
         <div className="mt-20 text-center text-gray-400 text-sm leading-relaxed">
-          Focused on clean architecture, scalable systems, and long-term maintainability.
+          Focused on actionable intelligence, clean reporting, and building unshakeable defenses.
         </div>
       </div>
     </section>

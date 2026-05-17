@@ -1,10 +1,11 @@
-// src/components/Loader.jsx
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const Loader = ({ onComplete }) => {
   const sRef = useRef(null);
   const containerRef = useRef(null);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -12,7 +13,7 @@ const Loader = ({ onComplete }) => {
         gsap.to(containerRef.current, {
           opacity: 0,
           duration: 0.8,
-          onComplete: onComplete,
+          onComplete: onCompleteRef.current,
         });
       },
     });
@@ -43,7 +44,7 @@ const Loader = ({ onComplete }) => {
         ref={sRef}
         className="text-[10rem] font-extrabold tracking-widest bg-gradient-to-r from-pink-500 via-purple-400 to-blue-500 text-transparent bg-clip-text drop-shadow-xl"
       >
-        S
+        B
       </h1>
     </div>
   );

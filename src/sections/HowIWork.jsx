@@ -62,20 +62,20 @@ const HowIWork = () => {
 
   const steps = [
     {
-      title: "Discovery & Alignment",
-      desc: "We begin with a structured discussion to understand your business objectives, audience, and technical requirements — ensuring clarity before execution."
+      title: "Reconnaissance & Scoping",
+      desc: "We define the engagement scope, assets in scope, and rules of engagement. I conduct initial reconnaissance to map the attack surface and identify potential entry points."
     },
     {
-      title: "Strategic Planning",
-      desc: "Defining user journeys, system architecture, and a scalable roadmap aligned with your long-term business growth."
+      title: "Vulnerability Identification",
+      desc: "Systematic scanning and manual testing using Nmap, Burp Suite, and OWASP ZAP. Deep-dive analysis into web applications, APIs, and network services for OWASP Top 10 vulnerabilities."
     },
     {
-      title: "Development & Execution",
-      desc: "Clean, maintainable, and performance-driven development using modern full-stack technologies and best engineering practices."
+      title: "Exploitation & Validation",
+      desc: "Controlled exploitation to validate findings and assess real-world impact. Proof-of-concept demonstrations for each vulnerability, ruling out false positives with precision."
     },
     {
-      title: "Launch & Optimization",
-      desc: "Deployment, testing, analytics integration, and refinement to ensure stability, performance, and measurable results."
+      title: "Reporting & Remediation",
+      desc: "Executive-ready report with prioritized findings, business impact analysis, and step-by-step remediation guidance. Clear communication throughout for rapid mitigation."
     }
   ];
 
@@ -92,7 +92,7 @@ const HowIWork = () => {
         <TitleHeader
           title="How I Work"
           number="04"
-          text="A structured process designed to deliver clarity, efficiency, and reliable outcomes."
+          text="A structured methodology designed for thoroughness, accuracy, and actionable outcomes."
         />
 
         {/* Animated Path */}
@@ -167,8 +167,8 @@ const HowIWork = () => {
 
         {/* Trust Signals */}
         <div className="mt-32 text-center text-gray-400 text-sm leading-relaxed">
-          Typical project timeline: 2–4 weeks depending on scope. <br />
-          Flexible for international time zones. <br />
+          Typical engagement timeline: 1–3 weeks depending on scope. <br />
+          Confidentiality agreements available. <br />
           Clear communication and milestone-based delivery.
         </div>
 

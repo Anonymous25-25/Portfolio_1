@@ -10,10 +10,10 @@ const Footer = () => {
         {/* Name & Positioning */}
         <div>
           <h3 className="text-xl font-semibold text-white">
-            Saurav Kumar Singh
+            BlackSide Security
           </h3>
           <p className="text-gray-400 text-sm mt-2">
-            Full-Stack MERN Developer building scalable digital solutions.
+            Youness Boussedari — Cybersecurity Engineer | Offensive Security Specialist
           </p>
         </div>
 
@@ -40,10 +40,10 @@ const Footer = () => {
         {/* Direct Email */}
         <div>
           <a
-            href="mailto:singhsaurav170@gmail.com"
+            href="mailto:black1black234b@gmail.com"
             className="text-blue-400 hover:text-blue-300 transition text-sm"
           >
-            singhsaurav170@gmail.com
+            black1black234b@gmail.com
           </a>
         </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-gray-500 text-xs">
-          © 2025 Saurav Kumar Singh. All rights reserved.
+          &copy; 2026 BlackSide Security · Youness Boussedari. All rights reserved.
         </p>
 
       </div>

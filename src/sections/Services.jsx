@@ -1,27 +1,27 @@
 import React from "react";
 import GradientSpheres from "../components/GradientSpheres";
 import TitleHeader from "../components/TitleHeader";
-import { Layout, Rocket, Brain } from "lucide-react";
+import { Shield, Search, LineChart } from "lucide-react";
 
 function Services() {
   const solutions = [
     {
       number: "01",
-      title: "Custom Web Applications",
-      icon: <Layout size={28} />,
-      desc: "End-to-end MERN stack solutions tailored to your business needs — from frontend interfaces to secure backend systems."
+      title: "Penetration Testing",
+      icon: <Shield size={28} />,
+      desc: "Web application and network penetration testing covering OWASP Top 10, SQL injection, XSS, and authentication flaws. Actionable findings prioritized by business risk."
     },
     {
       number: "02",
-      title: "Performance & Conversion Optimization",
-      icon: <Rocket size={28} />,
-      desc: "Optimized user experiences designed to increase engagement, improve speed, and turn visitors into customers."
+      title: "Vulnerability Assessment",
+      icon: <Search size={28} />,
+      desc: "Comprehensive reconnaissance and vulnerability identification using Nmap, Burp Suite, OWASP ZAP, and Metasploit. Clear, executive-ready reporting."
     },
     {
       number: "03",
-      title: "Scalable Backend Architecture",
-      icon: <Brain size={28} />,
-      desc: "Clean, structured, and maintainable backend systems built to support long-term scalability and operational efficiency."
+      title: "SOC Analysis & Threat Detection",
+      icon: <LineChart size={28} />,
+      desc: "Security event monitoring, IoC correlation, and SIEM analysis using Splunk and Wazuh. MITRE ATT&CK-aligned threat hunting and detection strategies."
     }
   ];
 
@@ -37,7 +37,7 @@ function Services() {
         
         <TitleHeader
           title="How I Can Help"
-          text="Strategic digital solutions designed for measurable business growth."
+          text="Offensive security services designed to strengthen your defense posture."
           number={"02"}
         />
 
@@ -64,14 +64,14 @@ function Services() {
 
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-semibold mb-6">
-            Have a project in mind?
+            Have a security concern?
           </h3>
 
           <a
             href="#contact"
             className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition"
           >
-            Discuss Your Project
+            Discuss Your Engagement
           </a>
         </div>
 

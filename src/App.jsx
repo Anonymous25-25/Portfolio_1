@@ -39,7 +39,7 @@ function App() {
           <Services />
           <Projects />
           <HowIWork />
-          {/* <Experience /> */}
+          <Experience />
           <TechStack /> 
           <Testimonials />
           <Contact />

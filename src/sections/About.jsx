@@ -31,7 +31,7 @@ function About() {
       <div className="container mx-auto relative z-20">
         <TitleHeader
           title="About Me"
-          text="Turning ideas into scalable digital products."
+          text="Cybersecurity Engineer & Offensive Security Specialist."
           number={"01"}
         />
 
@@ -46,53 +46,59 @@ function About() {
                 {/* NAME + FLOWER */}
                 <div className="flex items-center gap-4">
                   <img
-                    src="/images/flower.svg"
-                    alt="flower"
+                    src="/images/shield.svg"
+                    alt="shield"
                     className="md:w-14 w-8 h-auto"
                   />
                   <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                    Saurav Kumar Singh
+                    Youness Boussedari
                     <p className="text-gray-400 text-sm mt-1">
-                      Full-Stack MERN Developer
+                      Cybersecurity Engineer | Offensive Security Specialist
                     </p>
                   </h2>
                 </div>
 
                 <p className="mt-6 text-gray-300 leading-relaxed">
-                  I partner with businesses to design and develop modern web
-                  applications that are structured, scalable, and built with
-                  long-term growth in mind.
+                  Student in cybersecurity specializing in penetration testing
+                  and threat detection. Experienced in reconnaissance, web
+                  exploitation (OWASP Top 10), and SOC analysis — I focus on
+                  actionable intelligence and executive-ready reporting.
                 </p>
 
                 <p className="mt-4 text-gray-300 leading-relaxed">
-                  My approach combines strong frontend craftsmanship with robust
-                  backend architecture — ensuring that every project is not only
-                  visually refined, but also technically reliable and
-                  performance-focused.
+                  My approach blends deep technical knowledge of attacker
+                  methodologies with a defender&apos;s mindset. Every engagement is
+                  designed to identify real risk, strengthen posture, and
+                  deliver measurable security improvements.
                 </p>
 
                 <p className="mt-4 text-gray-300 leading-relaxed">
-                  From strategy to deployment, I focus on delivering clean,
-                  maintainable solutions that simplify operations, improve user
-                  experience, and support measurable business outcomes.
+                  From recon to reporting, I ensure every finding is clearly
+                  communicated, prioritized by business impact, and backed by
+                  concrete remediation guidance.
                 </p>
 
                 <div className="mt-6 space-y-2 text-gray-300">
-                  <p>✔ Structured & Scalable Development</p>
-                  <p>✔ Clean, Maintainable Code Practices</p>
-                  <p>✔ Performance & Growth-Oriented Solutions</p>
+                  <p>✔ Penetration Testing & Vulnerability Assessment</p>
+                  <p>✔ Threat Detection & SOC Analysis</p>
+                  <p>✔ Executive-Ready Security Reporting</p>
                 </div>
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="md:col-span-5">
-                <div className="relative w-full aspect-square max-w-sm mx-auto">
+              <div className="md:col-span-5 flex justify-center">
+                <div className="relative w-full max-w-[320px] aspect-[3/4] mx-auto group">
                   <img
-                    src="/images/profile.jpg"
-                    alt="Saurav"
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    src="/images/youness-avatar.png"
+                    alt="Youness Boussedari"
+                    className="w-full h-full object-cover object-top rounded-2xl shadow-2xl border border-white/10 transition-transform duration-700 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-purple-500/20 blur-2xl -z-10"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 blur-2xl -z-10 transition-opacity duration-500 group-hover:opacity-100 opacity-60"></div>
+                  
+                  {/* Subtle scanline overlay on hover */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                     <div className="w-full h-1/2 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent animate-[scan_4s_linear_infinite]"></div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Text3D } from "@react-three/drei";
-import { ContactBoy } from "./Boy";
+import { ContactBoy } from "./ContactBoy";
 import React from "react";
 
 const ContactExperience = () => {

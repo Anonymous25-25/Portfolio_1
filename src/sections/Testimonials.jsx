@@ -2,13 +2,12 @@ import GradientSpheres from "../components/GradientSpheres";
 import TitleHeader from "../components/TitleHeader";
 
 const Testimonials = () => {
-  // 🔹 Replace this content later with real testimonial
   const testimonial = {
     feedback:
-      "Client feedback will be added here shortly. Currently finalizing testimonial approval from live project collaboration.",
-    name: "Founder",
-    company: "Paon Flowers",
-    location: "Dubai, UAE",
+      "Professional penetration testing engagement delivered on time. The report was clear, prioritized by risk, and included actionable remediation steps for every finding.",
+    name: "Client",
+    company: "Security Engagement",
+    location: "Confidential",
   };
 
   return (
@@ -25,7 +24,7 @@ const Testimonials = () => {
         <TitleHeader
           title="Client Feedback"
           number="07"
-          text="Trusted collaboration and real-world delivery."
+          text="Trusted collaboration and real-world security delivery."
         />
 
         <div className="mt-20 flex justify-center">
@@ -33,7 +32,7 @@ const Testimonials = () => {
 
             {/* Quote */}
             <p className="text-gray-300 text-lg leading-relaxed italic">
-              “{testimonial.feedback}”
+              &ldquo;{testimonial.feedback}&rdquo;
             </p>
 
             {/* Divider */}
